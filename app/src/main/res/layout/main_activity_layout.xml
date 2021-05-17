@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange_light"
+        android:elevation="4dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Recipe Calculator"
+        app:titleTextColor="@color/white">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/button_background"
+            android:clickable="true"
+            android:elevation="20dp"
+            android:gravity="center"
+            android:onClick="showRecipesFragment"
+            android:text="My Recipes" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/init_servings_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:padding="8dp"
+        android:text="@string/initial_servings"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <EditText
+        android:id="@+id/editTextNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/border"
+        android:ellipsize="none"
+        android:ems="2"
+        android:focusedByDefault="false"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:padding="8dp"
+        android:selectAllOnFocus="true"
+        android:text="0"
+        android:textAlignment="center"
+        android:textIsSelectable="true"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/init_servings_textView"
+        app:layout_constraintLeft_toRightOf="@+id/init_servings_textView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/init_servings_textView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/ingredients_recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginVertical="8dp"
+        android:layout_marginRight="16dp"
+        android:maxHeight="350dp"
+        android:padding="4dp"
+        app:layout_constraintStart_toStartOf="@+id/init_servings_textView"
+        app:layout_constraintTop_toBottomOf="@id/init_servings_textView"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/add_ingredient_button"/>
+
+    <Button
+        android:id="@+id/add_ingredient_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:onClick="addIngredient"
+        android:text="Add Ingredient"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/target_servings_textView"
+        app:layout_constraintLeft_toLeftOf="@id/ingredients_recyclerView"
+        app:layout_constraintStart_toStartOf="@+id/ingredients_recyclerView" />
+
+    <Button
+        android:id="@+id/resetIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:forceDarkAllowed="false"
+        android:onClick="resetIngredients"
+        android:text="Reset"
+        app:layout_constraintBottom_toBottomOf="@id/add_ingredient_button"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber2"
+        app:layout_constraintTop_toTopOf="@id/add_ingredient_button" />
+
+    <TextView
+        android:id="@+id/target_servings_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:padding="8dp"
+        android:text="@string/target_servings"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/init_servings_textView" />
+
+    <EditText
+        android:id="@+id/editTextNumber2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:ellipsize="none"
+        android:ems="2"
+        android:focusedByDefault="false"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:padding="8dp"
+        android:selectAllOnFocus="true"
+        android:text="0"
+        android:textAlignment="center"
+        android:textIsSelectable="true"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/target_servings_textView"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber1"
+        app:layout_constraintTop_toTopOf="@+id/target_servings_textView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/button_background"
+        android:onClick="goToconvertRecipe"
+        android:text="@string/convert"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/target_servings_textView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

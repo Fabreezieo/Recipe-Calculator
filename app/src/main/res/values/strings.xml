@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Recipe Calculator</string>
+    <string name="initial_servings">Enter initial number of servings:</string>
+    <string name="target_servings">Enter desired number of servings:</string>
+    <string name="convert">Convert</string>
+    <string name="init_servings_error_message">Please Insert Initial Number of Servings</string>
+    <string-array name="units_of_measure">
+        <item>Kg</item>
+        <item>g</item>
+        <item>l</item>
+        <item>ml</item>
+        <item>Unit</item>
+    </string-array>
+</resources>

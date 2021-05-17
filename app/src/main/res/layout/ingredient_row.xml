@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:ems="2"
+        android:focusedByDefault="false"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:padding="4dp"
+        android:saveEnabled="false"
+        android:selectAllOnFocus="true"
+        android:textIsSelectable="true" />
+
+    <Spinner
+        android:id="@+id/unitOfMeasure_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:saveEnabled="false" />
+
+    <EditText
+        android:id="@+id/ingredient_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_weight="1"
+        android:focusedByDefault="false"
+        android:hint="Ingredient..."
+        android:background="@drawable/border"
+        android:padding="4dp"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:saveEnabled="false"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textIsSelectable="true" />
+
+    <Button
+        android:id="@+id/delete_icon"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:iconTint="#ACA7A7" />
+</LinearLayout>
